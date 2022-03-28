@@ -1,23 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Nav from "./components/header/Nav";
+import "antd/dist/antd.css";
+import "./App.css";
+import rec from "./images/rec.png";
+import { Row, Col, Form, Input, Card } from "antd";
 
 function App() {
+  const [form] = Form.useForm();
+  const [requiredMark, setRequiredMarkType] = useState("optional");
+
+  const onRequiredTypeChange = ({ requiredMarkValue }) => {
+    setRequiredMarkType(requiredMarkValue);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <Nav />
+
+      <div className="img-bg">
+        <img src={rec} alt="" className="image-show" />
+        <Row>
+          <Col span={4}>
+            <p className="watch-incredible"> Watch something incredible</p>
+          </Col>
+        </Row>
+      </div>
+
+      <div className="search-form">
+        <Form
+          form={form}
+          layout="vertical"
+          initialValues={{ requiredMarkValue: requiredMark }}
+          onValuesChange={onRequiredTypeChange}
+          requiredMark={requiredMark}
         >
-          Learn React
-        </a>
-      </header>
+          <Form.Item label="Search" required>
+            <Input />
+          </Form.Item>
+        </Form>
+
+        <Row>
+          <Col span={4} className="movie-card">
+          <p>Movie Category Name</p>
+          <Card bordered={true} style={{ width: 300 }}>
+      <p className="card-name">Movie Name</p> 
+    </Card>          
+    </Col>
+        </Row>
+
+      </div>
+
+     
+
     </div>
   );
 }

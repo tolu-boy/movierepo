@@ -1,38 +1,50 @@
-.App {
-  text-align: center;
+
+ .tolu{
+  color: #ffffffa6;
+  background: #292929 !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.ant-layout-header{
+  background: #292929 !important;
+  padding: 40px 0 77px 40px !important;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.image-show{
+  height: 100%;
+  position: relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.watch-incredible{
+font-family: 'DM Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 72px;
+line-height: 94px;
+letter-spacing: -0.05em;
+color: #fff;
+position: absolute;
+left: 77px;
+top: -447px;
 }
 
-.App-link {
-  color: #61dafb;
+.search-form{
+  padding: 5%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ant-input{
+  border: 1px solid #000000 !important;
+}
+
+.ant-card {
+  border-radius: 12px;
+  background-color: #000000;
+  padding: 10px;
+}
+
+.card-name{
+    color: #fff;
+    text-align: center;
+    
+    padding: 10%;
 }
