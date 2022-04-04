@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Nav from "./components/header/Nav";
 import "antd/dist/antd.css";
 import "./App.css";
@@ -8,6 +8,21 @@ import { Row, Col, Form, Input, Card } from "antd";
 function App() {
   const [form] = Form.useForm();
   const [requiredMark, setRequiredMarkType] = useState("optional");
+  const [movies, setMovies] = useState([]);
+
+  const FetchData = async () => {
+    const response = await fetch(
+      `http://www.omdbapi.com/?i=tt3896198&apikey=5bfed286`
+    );
+    const FetchedApi = await response.json();
+    setMovies(FetchedApi);
+  };
+
+  useEffect(() => {
+    FetchData();
+  }, []);
+
+  console.log(movies, "ppp");
 
   const onRequiredTypeChange = ({ requiredMarkValue }) => {
     setRequiredMarkType(requiredMarkValue);
@@ -40,17 +55,15 @@ function App() {
 
         <Row>
           <Col span={4} className="movie-card">
-          <p>Movie Category Name</p>
-          <Card bordered={true} style={{ width: 300 }}>
-      <p className="card-name">Movie Name</p> 
-    </Card>          
-    </Col>
+            <p>Movie Category Name</p>
+            <Card bordered={true} style={{ width: 300 }}>
+              <p className="card-name">{movies.Actors}</p>
+            </Card>
+          </Col>
+
+         
         </Row>
-
       </div>
-
-     
-
     </div>
   );
 }

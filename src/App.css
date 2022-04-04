@@ -12,6 +12,7 @@
 
 .image-show{
   height: 100%;
+  width: 100%;
   position: relative;
 }
 
@@ -45,6 +46,10 @@ top: -447px;
 .card-name{
     color: #fff;
     text-align: center;
-    
     padding: 10%;
+}
+
+
+.border-nav{
+  border: 1px solid #ffff !important;
 }
